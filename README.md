@@ -1,4 +1,8 @@
-laundry
-=======
+# Laundry
+=========
 
-A Symfony project created on April 15, 2016, 9:10 pm.
+## Setup Database
+
+Run the following command in Docker CLI:
+
+`docker run -p 3306:3306 --name laundry-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:latest`
