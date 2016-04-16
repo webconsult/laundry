@@ -1,5 +1,4 @@
 # Laundry
-=========
 
 ## Setup Database
 
