@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller;
+namespace AppBundle\Controller\Admin;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -12,7 +12,7 @@ use AppBundle\Form\MachineTypeType;
 /**
  * MachineType controller.
  *
- * @Route("/machinetype")
+ * @Route("/admin/machinetype")
  */
 class MachineTypeController extends Controller
 {
