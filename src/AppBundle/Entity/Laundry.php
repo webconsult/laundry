@@ -59,9 +59,9 @@ class Laundry
     /**
      * @var string
      *
-     * @ORM\Column(name="longitude", type="string", length=20, nullable=true, unique=false)
+     * @ORM\Column(name="lattitude", type="string", length=20, nullable=true, unique=false)
      */
-    private $longitude;
+    private $lattitude;
 
     /**
      * Get id

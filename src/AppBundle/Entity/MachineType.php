@@ -23,6 +23,16 @@ class MachineType
     private $id;
 
     /**
+    * @ORM\OneToMany(targetEntity="AppBundle\Entity\Machine", mappedBy="type")
+    */
+    private $machines;
+
+    public function __construct()
+    {
+      $this->machines = new ArrayCollection();
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=20, unique=true)
@@ -94,5 +104,38 @@ class MachineType
     {
         return $this->description;
     }
-}
 
+    /**
+     * Add machine
+     *
+     * @param \AppBundle\Entity\Machine $machine
+     *
+     * @return MachineType
+     */
+    public function addMachine(\AppBundle\Entity\Machine $machine)
+    {
+        $this->machines[] = $machine;
+
+        return $this;
+    }
+
+    /**
+     * Remove machine
+     *
+     * @param \AppBundle\Entity\Machine $machine
+     */
+    public function removeMachine(\AppBundle\Entity\Machine $machine)
+    {
+        $this->machines->removeElement($machine);
+    }
+
+    /**
+     * Get machines
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMachines()
+    {
+        return $this->machines;
+    }
+}
