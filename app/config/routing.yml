@@ -4,9 +4,6 @@ app:
 admin:
     resource: "@AppBundle/Controller/Admin"
     type:     annotation
-api:
-    resource: "@AppBundle/Controller/Api"
-    type:     annotation
-#machines:
-#    type: rest
-#    resource: AppBundle\MachineController
+machines:
+    resource: "@AppBundle/Controller/Api/MachineController.php"
+    type: rest
