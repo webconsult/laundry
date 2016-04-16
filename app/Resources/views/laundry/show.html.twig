@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Laundry</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ laundry.id }}</td>
+            </tr>
+            <tr>
+                <th>Streetname</th>
+                <td>{{ laundry.streetName }}</td>
+            </tr>
+            <tr>
+                <th>Streetnumber</th>
+                <td>{{ laundry.streetNumber }}</td>
+            </tr>
+            <tr>
+                <th>Zipcode</th>
+                <td>{{ laundry.zipCode }}</td>
+            </tr>
+            <tr>
+                <th>Contactphone</th>
+                <td>{{ laundry.contactPhone }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ laundry.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Lattitude</th>
+                <td>{{ laundry.lattitude }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('laundry_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('laundry_edit', { 'id': laundry.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Machine list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Identifier</th>
+                <th>Imageurl</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for machine in machines %}
+            <tr>
+                <td><a href="{{ path('machine_show', { 'id': machine.id }) }}">{{ machine.id }}</a></td>
+                <td>{{ machine.identifier }}</td>
+                <td>{{ machine.imageUrl }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('machine_show', { 'id': machine.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('machine_edit', { 'id': machine.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('machine_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

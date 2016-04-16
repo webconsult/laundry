@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>MachineType list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for machineType in machineTypes %}
+            <tr>
+                <td><a href="{{ path('machinetype_show', { 'id': machineType.id }) }}">{{ machineType.id }}</a></td>
+                <td>{{ machineType.title }}</td>
+                <td>{{ machineType.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('machinetype_show', { 'id': machineType.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('machinetype_edit', { 'id': machineType.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('machinetype_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

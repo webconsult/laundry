@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Laundry list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Streetname</th>
+                <th>Streetnumber</th>
+                <th>Zipcode</th>
+                <th>Contactphone</th>
+                <th>Longitude</th>
+                <th>Lattitude</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for laundry in laundries %}
+            <tr>
+                <td><a href="{{ path('laundry_show', { 'id': laundry.id }) }}">{{ laundry.id }}</a></td>
+                <td>{{ laundry.streetName }}</td>
+                <td>{{ laundry.streetNumber }}</td>
+                <td>{{ laundry.zipCode }}</td>
+                <td>{{ laundry.contactPhone }}</td>
+                <td>{{ laundry.longitude }}</td>
+                <td>{{ laundry.lattitude }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('laundry_show', { 'id': laundry.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('laundry_edit', { 'id': laundry.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('laundry_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
