@@ -83,5 +83,4 @@ fos_rest:
         rules:
             prefer_extension: false
     view:
-        view_response_listener:
-            enabled: true
+        view_response_listener: true

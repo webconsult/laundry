@@ -8,20 +8,15 @@ use FOS\RestBundle\Controller\Annotations\View;
 class MachineController extends Controller {
 
     /**
-     * @return array
-     * @View()
+     * Get all machines.
+     *
+     * @View(template="AppBundle:Machine:show.html.twig")
      */
     public function getMachinesAction() {
-
-        $view = View::create();
 
         $machines = $this->getDoctrine()->getRepository('AppBundle:Machine')
             -> findAll();
 
-        $view->setData($machines);
-
-        return $view;
-
-//        return array('machines' => $machines);
+        return array('machines' => $machines);
     }
 }
